@@ -1,0 +1,41 @@
+{
+  "name": "sails-hook-swaggerui",
+  "version": "0.0.1",
+  "description": "Installable hook for the sailsjs framework that generates swagger docs from inline comments and serves swagger-ui front end. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/treehouseaustin/sails-hook-swaggerui.git"
+  },
+  "keywords": [
+    "sails",
+    "sailsjs",
+    "swagger",
+    "docs",
+    "documentation",
+    "sails",
+    "hook",
+    "mvc",
+    "swagger-ui",
+    "swaggerui"
+  ],
+  "author": "Nicholas Crumrine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/treehouseaustin/sails-hook-swaggerui/issues"
+  },
+  "homepage": "https://github.com/treehouseaustin/sails-hook-swaggerui#readme",
+  "dependencies": {
+    "async": "^2.1.4",
+    "doctrine": "^2.0.0",
+    "js-yaml": "^3.7.0",
+    "lodash": "^4.17.4",
+    "serve-static": "^1.11.1"
+  },
+  "sails": {
+   "isHook": true
+  }
+}
