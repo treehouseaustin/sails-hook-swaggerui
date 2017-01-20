@@ -49,11 +49,14 @@ module.exports = function defineSwaggerHook(sails) {
     },
     routes: {
       before: {
-
+        
         // Redirect to the above middleware function in
         // the event that the trailing slash is omitted.
         '/swagger': function(req, res, next){
-          return res.redirect('/swagger/')
+          if (!/\/swagger[/]$/.test(req.originalUrl)){
+            return res.redirect('/swagger/');
+          }
+          return next();
         },
 
         // If the swaggerui config specifies a policy
@@ -81,7 +84,6 @@ module.exports = function defineSwaggerHook(sails) {
         // Serve the main swagger-ui view after injecting
         // it with the csrf token.
         '/swagger/': function(req, res, next){
-
           fs.readFile(path.join(__dirname, '/assets/swagger/index.html'), 'utf-8', function (err, html) {
             if (err) {
               throw err; 
