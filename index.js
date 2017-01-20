@@ -49,6 +49,13 @@ module.exports = function defineSwaggerHook(sails) {
     },
     routes: {
       before: {
+
+        // Redirect to the above middleware function in
+        // the event that the trailing slash is omitted.
+        '/swagger': function(req, res, next){
+          return res.redirect('/swagger/')
+        },
+
         // If the swaggerui config specifies a policy
         // by which to protect the swagger endpoints,
         // do so.  Otherwise, do nothing.
@@ -87,12 +94,6 @@ module.exports = function defineSwaggerHook(sails) {
             res.send(new Buffer(html));
             return res.end();
           });
-        },
-
-        // Redirect to the above middleware function in
-        // the event that the trailing slash is omitted.
-        '/swagger': function(req, res, next){
-          return res.redirect('/swagger/')
         },
 
         // Serve all other swagger-ui assets
