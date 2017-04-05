@@ -146,8 +146,7 @@ module.exports = function defineSwaggerHook(sails) {
       // as well as future proof
       fs.readdir('./api/controllers', function(err, files){
         swaggerAssetFiles = _.reduce(files,function(keepers,oneFileName){
-          if ((/\AccountController.js$/i).test(oneFileName)){
-          // if ((/\.js$/i).test(oneFileName)){
+          if ((/\.js$/i).test(oneFileName)){
             keepers.push(path.join(process.env.PWD, 'api/controllers/'+oneFileName));
           }
           return keepers;
