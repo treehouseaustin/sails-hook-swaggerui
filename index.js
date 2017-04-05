@@ -197,7 +197,7 @@ module.exports = function defineSwaggerHook(sails) {
           _.extend(swaggerJSON, {
             paths: swaggerData.paths
           });
-console.log('Serving Swagger data:',JSON.stringify(swaggerJSON,false,4));
+
           serveStatic = static(path.join(__dirname, 'assets'));
 
         });
