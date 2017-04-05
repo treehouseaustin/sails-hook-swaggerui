@@ -1,6 +1,6 @@
 {
   "name": "sails-hook-swaggerui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Installable hook for the sailsjs framework that generates swagger docs from inline comments and serves swagger-ui front end. ",
   "main": "index.js",
   "scripts": {
